@@ -39,7 +39,7 @@ Ensure you have **Node.js** and **npm** (or **yarn**) installed on your system.
    - Obtain an API key from the movie database API (e.g., TMDB).
    - Create a `.env` file in the root directory and add:
      ```env
-     REACT_APP_API_KEY=your_api_key_here
+     VITE_API_KEY=your_api_key_here
      ```
 
 4. Start the development server:
@@ -57,7 +57,6 @@ moviehive/
 │   ├── pages/        # Main pages (e.g., Home, MovieDetails)
 │   ├── App.js        # Main React component
 │   ├── index.js      # Entry point
-│   └── styles/       # CSS files
 ├── public/           # Static assets
 └── package.json      # Project metadata and dependencies
 
