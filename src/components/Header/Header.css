@@ -45,6 +45,10 @@
 .header a:hover::before {
   width: 100%;
 }
+header{
+  padding: 20px;
+  background-color: #ff914d;
+}
 @media (max-width: 480px)  {
   .header a {
     font-size: 0.35rem;
