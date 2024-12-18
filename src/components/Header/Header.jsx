@@ -1,9 +1,10 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignInButton, UserButton , useClerk } from "@clerk/clerk-react";
 
 const Header = () => {
+  const { openSignIn, signOut } = useClerk();
   return (
     <div className="header">
       <div className="header-left">
@@ -18,10 +19,15 @@ const Header = () => {
         <Link to="/movies/upcoming">Upcoming</Link>
         <header>
           <SignedOut>
-            <SignInButton />
+            <button
+              className="sign-in-button"
+              onClick={() => openSignIn({ afterSignInUrl: "/" })}
+            >
+              Sign In
+            </button>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <UserButton className="user-button" />
           </SignedIn>
         </header>
       </div>
