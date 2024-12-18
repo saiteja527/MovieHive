@@ -45,3 +45,27 @@
 .header a:hover::before {
   width: 100%;
 }
+@media (max-width: 480px)  {
+  .header a {
+    font-size: 0.35rem;
+  }
+  .logo {
+    width: 40px;
+  }
+  .header {
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 768px) and (min-width:481px){
+  .header a {
+    font-size: 0.7rem;
+  }
+  .logo {
+    width: 60px;
+  }
+  .header {
+    margin: 0 1rem;
+  }
+  
+}
+

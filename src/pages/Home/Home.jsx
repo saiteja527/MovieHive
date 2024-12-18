@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
@@ -27,6 +26,7 @@ const Home = () => {
         transitionTime={3}
         infiniteLoop={true}
         showStatus={false}
+        showIndicators={false}
       >
         {popularMovies.map((movie) => (
           <Link

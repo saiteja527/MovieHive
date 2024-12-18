@@ -1,6 +1,8 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+
 const Header = () => {
   return (
     <div className="header">
@@ -14,6 +16,14 @@ const Header = () => {
         <Link to="/movies/popular">Popular</Link>
         <Link to="/movies/top_rated">Top Rated</Link>
         <Link to="/movies/upcoming">Upcoming</Link>
+        <header>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </header>
       </div>
     </div>
   );

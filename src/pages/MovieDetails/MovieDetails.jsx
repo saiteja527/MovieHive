@@ -97,7 +97,7 @@ const MovieDetails = () => {
           >
             <p>
               <span className="movie__homeButton movie__Button">
-                Homepage <i className="newTab fas fa-external-link-alt"></i>
+                MovieWebsite <i className="newTab fas fa-external-link-alt"></i>
               </span>
             </p>
           </a>
@@ -110,7 +110,7 @@ const MovieDetails = () => {
           >
             <p>
               <span className="movie__imdbButton movie__Button">
-                IMDb<i className="newTab fas fa-external-link-alt"></i>
+                Movie Link<i className="newTab fas fa-external-link-alt"></i>
               </span>
             </p>
           </a>
