@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./movieList.css";
+import "./MovieList.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
 const MovieList = () => {
@@ -28,7 +28,7 @@ const MovieList = () => {
     <div className="movie__list">
       <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
       <div className="list__cards">
-        {movieList.map((movie,index) => (
+        {movieList.map((movie, index) => (
           <Card key={index} movie={movie} />
         ))}
       </div>
