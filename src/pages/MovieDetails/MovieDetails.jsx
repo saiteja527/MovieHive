@@ -110,7 +110,7 @@ const MovieDetails = () => {
           >
             <p>
               <span className="movie__imdbButton movie__Button">
-                Movie Link<i className="newTab fas fa-external-link-alt"></i>
+                MovieLink<i className="newTab fas fa-external-link-alt"></i>
               </span>
             </p>
           </a>
