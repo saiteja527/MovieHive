@@ -65,15 +65,6 @@
   background-color: #f87a2b;
   transform: scale(1.05);
 }
-
-.user-button {
-  background-color: #28a745;
-}
-
-.user-button:hover {
-  background-color: #1e7e34;
-  transform: scale(1.05);
-}
 @media (max-width: 480px)  {
   .header a {
     font-size: 0.35rem;

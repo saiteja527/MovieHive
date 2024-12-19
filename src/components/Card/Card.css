@@ -62,6 +62,48 @@
   margin-bottom: 0.25rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
+  .cards {
+    transform: none;
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+  .cards:hover {
+    transform: none;
+  }
+}
 
+@media (max-width: 992px) {
+  .cards {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .cards__img {
+    height: auto;
+    width: 100%;
+  }
+
+  .cards__overlay {
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .card__title, .card__runtime, .card__description {
+    font-size: 0.9rem;
+  }
 }
