@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import MovieList from "./components/MoviesList/MovieList";
+import Footer from "./components/Footer/Footer";
 const App = () => {
   return (
     <div className="App">
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="movies/:type" element={<MovieList/>}></Route>
         <Route path="/*" element={<h1>404 Not Found</h1>}></Route>
       </Routes>
+      <hr/>
+      <Footer/>
     </div>
   );
 };
