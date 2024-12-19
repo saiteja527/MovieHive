@@ -5,7 +5,7 @@ import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
 
 const Header = () => {
   const { openSignIn } = useClerk();
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
