@@ -4,15 +4,27 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  position: relative;  
+  z-index: 10;  
 }
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 90px;
+  transition: transform 0.3s ease-in-out;
+}
+
 .header-right {
   display: flex;
   align-items: center;
   gap: 20px;
+  transition: all 0.3s ease-in-out;
 }
-.logo {
-  width: 90px;
-}
+
 .header a {
   font-size: 1.1rem;
   background-image: linear-gradient(to right, #ff914d, #ff914d 50%, #fff 50%);
@@ -45,6 +57,7 @@
 .header a:hover::before {
   width: 100%;
 }
+
 .sign-in-button,
 .user-button {
   padding: 5px 10px;
@@ -65,36 +78,80 @@
   background-color: #f87a2b;
   transform: scale(1.05);
 }
-@media (max-width: 480px)  {
-  .header a {
-    font-size: 0.35rem;
-  }
-  .logo {
-    width: 40px;
-  }
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ff914d;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
   .header {
     margin: 0 1rem;
+    padding: 0.5rem 0;
   }
-  .sign-in-button {
-    font-size: 8px;
-    padding: 5px 9px;
+
+  .logo {
+    width: 70px;
+    transform: scale(0.9);
   }
-}
-@media (max-width: 768px) and (min-width:481px){
+
+  .header-right {
+    display: none; 
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    right: 0;
+    background-color: #444;
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    align-items: center;
+    justify-content: end;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;  
+  }
+
+  .header-right.open {
+    display: flex; 
+  }
+
+  .hamburger-menu {
+    display: flex; 
+  }
+
   .header a {
     font-size: 0.7rem;
   }
-  .logo {
-    width: 60px;
+
+  .sign-in-button {
+    font-size: 14px;
+    padding: 6px 14px;
   }
-  .header {
-    margin: 0 1rem;
+}
+@media (min-width: 769px) {
+  .header a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
   }
-  .sign-in-button,
-  .user-button {
-    font-size: 12px;
+
+  .header a:hover {
+    color: #ff914d;
+  }
+
+  .sign-in-button {
+    font-size: 16px;
     padding: 8px 16px;
   }
-  
 }
-
