@@ -1,7 +1,7 @@
 footer.footer {
   background-color: black;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 60px 20px;
   position: relative;
   border-top: 1px solid #444;
@@ -102,11 +102,11 @@ footer.footer {
     text-align: center;
   }
   .footer-column h3 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .footer-column ul li a {
-    font-size: 0.95rem; 
+    font-size: 0.95rem;
   }
 }
 
@@ -118,28 +118,50 @@ footer.footer {
     margin-bottom: 30px;
   }
   .footer-column h3 {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .footer-column ul li a {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 
   .footer-bottom {
-    font-size: 0.85rem; 
+    font-size: 0.85rem;
+
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer-column h3 {
-    font-size: 1rem; 
+    font-size: 0.5rem;
   }
 
   .footer-column ul li a {
-    font-size: 0.8rem;
+    font-size: 0.3rem;
   }
 
   .footer-bottom {
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
+    margin-top: 10px;
   }
+  .footer-container {
+    gap:5px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .social-icons .icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+  }
+  footer.footer {
+    padding: 20px 10px;
+  }
+  .footer-column ul li {
+    margin-bottom: 2px;
+  }
+  .social-icons {
+  gap: 5px;
+}
+
 }
