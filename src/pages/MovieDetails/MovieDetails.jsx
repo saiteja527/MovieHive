@@ -38,7 +38,7 @@ const MovieDetails = () => {
           margin: "20px",
         }}
       >
-        <HashLoader color="#ff914d" size="10px" />
+        <HashLoader color="#ff914d" size="30px" />
       </div>
     );
   }
