@@ -75,7 +75,7 @@
     text-align: left;
   }
   .hero .Image {
-    height: auto;
+    height: 250px;
   }
 }
 @media (min-width:481px) and (max-width:768px){
