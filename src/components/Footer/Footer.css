@@ -4,6 +4,7 @@ footer.footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 60px 20px;
   position: relative;
+  border-top: 1px solid #444;
 }
 
 .footer-container {
@@ -100,6 +101,13 @@ footer.footer {
   .footer-column {
     text-align: center;
   }
+  .footer-column h3 {
+    font-size: 1.2rem; 
+  }
+
+  .footer-column ul li a {
+    font-size: 0.95rem; 
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -109,18 +117,29 @@ footer.footer {
   .footer-column {
     margin-bottom: 30px;
   }
+  .footer-column h3 {
+    font-size: 1.1rem; 
+  }
+
+  .footer-column ul li a {
+    font-size: 0.9rem; 
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem; 
+  }
 }
 
 @media screen and (max-width: 480px) {
   .footer-column h3 {
-    font-size: 1.1rem;
+    font-size: 1rem; 
   }
 
   .footer-column ul li a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .footer-bottom {
-    font-size: 0.8rem;
+    font-size: 0.75rem; 
   }
 }
