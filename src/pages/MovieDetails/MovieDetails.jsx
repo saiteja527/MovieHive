@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MovieDetails.css";
 import { useParams } from "react-router-dom";
+import { HashLoader } from "react-spinners";
 
 const MovieDetails = () => {
-  const [currentMovieDetail, setMovie] = useState();
+  const [currentMovieDetail, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -12,14 +14,34 @@ const MovieDetails = () => {
   }, []);
 
   const getData = () => {
+    setIsLoading(true);
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${
         import.meta.env.VITE_SECRET_KEY
       }&language=en-US`
     )
       .then((res) => res.json())
-      .then((data) => setMovie(data));
+      .then((data) => {
+        setMovie(data);
+        setIsLoading(false);
+      });
   };
+
+  if (isLoading) {
+    return (
+      <div
+        className="loading"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "20px",
+        }}
+      >
+        <HashLoader color="#ff914d" size="10px" />
+      </div>
+    );
+  }
 
   return (
     <div className="movie">
@@ -29,6 +51,7 @@ const MovieDetails = () => {
           src={`https://image.tmdb.org/t/p/original${
             currentMovieDetail ? currentMovieDetail.backdrop_path : ""
           }`}
+          alt="Movie backdrop"
         />
       </div>
       <div className="movie__detail">
@@ -39,6 +62,7 @@ const MovieDetails = () => {
               src={`https://image.tmdb.org/t/p/original${
                 currentMovieDetail ? currentMovieDetail.poster_path : ""
               }`}
+              alt="Movie poster"
             />
           </div>
         </div>
@@ -71,12 +95,10 @@ const MovieDetails = () => {
             </div>
             <div className="movie__genres">
               {currentMovieDetail && currentMovieDetail.genres
-                ? currentMovieDetail.genres.map((genre,index) => (
-                    <>
-                      <span className="movie__genre" id={genre.id} key={index}>
-                        {genre.name}
-                      </span>
-                    </>
+                ? currentMovieDetail.genres.map((genre, index) => (
+                    <span className="movie__genre" key={index}>
+                      {genre.name}
+                    </span>
                   ))
                 : ""}
             </div>
