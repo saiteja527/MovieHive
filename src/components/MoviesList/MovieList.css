@@ -1,66 +1,43 @@
-.movie__list {
+.movies__list {
   padding: 0 3rem 3rem 3rem;
 }
 
-.list__title {
+.list__header {
   font-size: 1.75rem;
   margin: 2.5rem;
 }
 
-.list__cards {
+.cards__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   gap: 20px;
   margin-left: 1.5rem;
 }
+
 @media screen and (max-width: 768px) {
-  .list__cards {
+  .cards__grid {
     justify-content: center;
     gap: 10px;
     margin-left: 0;
   }
 }
-.movie__list {
-  padding: 0 3rem 3rem 3rem;
-}
-
-.list__title {
-  font-size: 1.75rem;
-  margin: 2.5rem;
-}
-
-.list__cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 20px;
-  margin-left: 1.5rem;
-}
 
 @media screen and (max-width: 992px) {
-  .list__cards {
+  .cards__grid {
     justify-content: space-around;
     gap: 15px;
     margin-left: 0;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .list__cards {
-    justify-content: center;
-    gap: 10px;
-    margin-left: 0;
-  }
-}
-
 @media screen and (max-width: 576px) {
-  .list__cards {
+  .cards__grid {
     justify-content: center;
     gap: 8px;
   }
 
-  .list__cards > div {
+  .cards__grid > div {
     flex: 1 1 calc(100% - 16px);
     max-width: calc(100% - 16px);
   }

@@ -30,7 +30,7 @@ const MovieDetails = () => {
   if (isLoading) {
     return (
       <div
-        className="loading"
+        className="loading-indicator"
         style={{
           display: "flex",
           alignItems: "center",
@@ -44,21 +44,21 @@ const MovieDetails = () => {
   }
 
   return (
-    <div className="movie">
-      <div className="movie__intro">
+    <div className="movie-container">
+      <div className="movie-intro">
         <img
-          className="movie__backdrop"
+          className="movie-backdrop"
           src={`https://image.tmdb.org/t/p/original${
             currentMovieDetail ? currentMovieDetail.backdrop_path : ""
           }`}
           alt="Movie backdrop"
         />
       </div>
-      <div className="movie__detail">
-        <div className="movie__detailLeft">
-          <div className="movie__posterBox">
+      <div className="movie-details">
+        <div className="movie-details-left">
+          <div className="movie-poster-box">
             <img
-              className="movie__poster"
+              className="movie-poster"
               src={`https://image.tmdb.org/t/p/original${
                 currentMovieDetail ? currentMovieDetail.poster_path : ""
               }`}
@@ -66,51 +66,51 @@ const MovieDetails = () => {
             />
           </div>
         </div>
-        <div className="movie__detailRight">
-          <div className="movie__detailRightTop">
-            <div className="movie__name">
+        <div className="movie-details-right">
+          <div className="movie-details-top">
+            <div className="movie-title">
               {currentMovieDetail ? currentMovieDetail.original_title : ""}
             </div>
-            <div className="movie__tagline">
+            <div className="movie-tagline">
               {currentMovieDetail ? currentMovieDetail.tagline : ""}
             </div>
-            <div className="movie__rating">
+            <div className="movie-rating">
               Rating:{" "}
               {currentMovieDetail ? currentMovieDetail.vote_average : ""}{" "}
               <i className="fas fa-star" />
-              <span className="movie__voteCount">
+              <span className="movie-vote-count">
                 {currentMovieDetail
                   ? "(" + currentMovieDetail.vote_count + ") votes"
                   : ""}
               </span>
             </div>
-            <div className="movie__runtime">
+            <div className="movie-runtime">
               Duration:{" "}
               {currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}
             </div>
-            <div className="movie__releaseDate">
+            <div className="movie-release-date">
               {currentMovieDetail
                 ? "Release date: " + currentMovieDetail.release_date
                 : ""}
             </div>
-            <div className="movie__genres">
+            <div className="movie-genres">
               {currentMovieDetail && currentMovieDetail.genres
                 ? currentMovieDetail.genres.map((genre, index) => (
-                    <span className="movie__genre" key={index}>
+                    <span className="movie-genre" key={index}>
                       {genre.name}
                     </span>
                   ))
                 : ""}
             </div>
           </div>
-          <div className="movie__detailRightBottom">
-            <div className="synopsisText">Synopsis</div>
+          <div className="movie-details-bottom">
+            <div className="synopsis-title">Synopsis</div>
             <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
           </div>
         </div>
       </div>
-      <div className="movie__links">
-        <div className="movie__heading">Links</div>
+      <div className="movie-links">
+        <div className="movie-links-heading">Links</div>
         {currentMovieDetail && currentMovieDetail.homepage && (
           <a
             href={currentMovieDetail.homepage}
@@ -118,8 +118,9 @@ const MovieDetails = () => {
             style={{ textDecoration: "none" }}
           >
             <p>
-              <span className="movie__homeButton movie__Button">
-                MovieWebsite <i className="newTab fas fa-external-link-alt"></i>
+              <span className="movie-home-button movie-action-button">
+                MovieWebsite{" "}
+                <i className="new-tab fas fa-external-link-alt"></i>
               </span>
             </p>
           </a>
@@ -131,8 +132,8 @@ const MovieDetails = () => {
             style={{ textDecoration: "none" }}
           >
             <p>
-              <span className="movie__imdbButton movie__Button">
-                MovieLink<i className="newTab fas fa-external-link-alt"></i>
+              <span className="movie-imdb-button movie-action-button">
+                MovieLink<i className="new-tab fas fa-external-link-alt"></i>
               </span>
             </p>
           </a>

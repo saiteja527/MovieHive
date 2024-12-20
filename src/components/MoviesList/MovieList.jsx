@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./MovieList.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
-import {  HashLoader} from "react-spinners";
+import { HashLoader } from "react-spinners";
 
 const MovieList = () => {
   const [movieList, setMovieList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   const { type } = useParams();
 
   useEffect(() => {
@@ -27,14 +27,14 @@ const MovieList = () => {
       .then((res) => res.json())
       .then((data) => {
         setMovieList(data.results);
-        setIsLoading(false); 
+        setIsLoading(false);
       });
   };
 
   if (isLoading) {
     return (
       <div
-        className="loading"
+        className="loading__container"
         style={{
           display: "flex",
           alignItems: "center",
@@ -48,9 +48,11 @@ const MovieList = () => {
   }
 
   return (
-    <div className="movie__list">
-      <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
-      <div className="list__cards">
+    <div className="movies__list">
+      <h2 className="list__header">
+        {(type ? type : "POPULAR").toUpperCase()}
+      </h2>
+      <div className="cards__grid">
         {movieList.map((movie, index) => (
           <Card key={index} movie={movie} />
         ))}
