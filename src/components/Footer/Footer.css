@@ -111,8 +111,12 @@ footer.footer {
 }
 
 @media screen and (max-width: 768px) {
+  .footer{
+    margin-top: 2rem;
+  }
   .footer-container {
     grid-template-columns: 1fr;
+
   }
   .footer-column {
     margin-bottom: 30px;

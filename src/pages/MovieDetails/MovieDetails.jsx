@@ -110,7 +110,7 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className="movie__links">
-        <div className="movie__heading">Useful Links</div>
+        <div className="movie__heading">Links</div>
         {currentMovieDetail && currentMovieDetail.homepage && (
           <a
             href={currentMovieDetail.homepage}

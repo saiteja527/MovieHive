@@ -59,10 +59,16 @@
 
 .movie__genres {
   margin: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  line-height: 10px;
+  width: 100%;
+  gap:2px;
 }
 
 .movie__genre {
-  padding: 0.5rem;
+  padding: 0.6rem;
   border: 2px solid white;
   border-radius: 20px;
   margin-right: 1rem;
@@ -87,7 +93,7 @@
 
 .movie__links {
   position: relative;
-  bottom: 120px;
+  bottom: 100px;
   display: flex;
   justify-content: space-between;
   width: 75%;
@@ -116,9 +122,20 @@
 .movie__imdbButton {
   background-color: #f3ce13;
 }
-
 .newTab {
   margin-left: 1.4rem;
+}
+@media (min-width:769px) and (max-width: 1024px) {
+  .movie__links {
+    bottom: 35px;
+  }
+  .movie__genre{
+    padding: 0.7rem;
+    margin-right: 0.4rem;
+  }
+  .movie__genres{
+    width: 500px;
+  }
 }
 @media (min-width:610px) and (max-width: 768px) {
   .movie__backdrop {
@@ -132,6 +149,19 @@
   }
   .movie{
     font-size: 10px;
+  }
+  .movie__genres{
+    width: 300px;
+  }
+  .movie__genre {
+    padding: 0.5rem;
+    margin-right: 0.3rem;
+  }
+  .movie__name{
+    font-size: 1.5rem;
+  }
+  .movie__poster {
+    width: 300px;
   }
 }
 @media (max-width: 600px) {
@@ -163,6 +193,7 @@
   .movie__links {
     width: 80%;
     bottom: 140px;
+    gap: 5px;
   }
   .movie__Button {
     border-radius: 20px;
@@ -172,8 +203,8 @@
     padding: 0.4rem 1.5rem;
   }
   .movie__genre {
-    padding: 0.3rem;
-    margin-right: 0.5rem;
+    padding: 0.2rem;
+    margin-right: 0.3rem;
   }
   .movie__detailRightTop > div {
     margin-bottom: 0.3rem;
