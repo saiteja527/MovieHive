@@ -30,7 +30,7 @@ const MovieDetails = () => {
   if (isLoading) {
     return (
       <div
-        className="loading-indicator"
+        className="loading-container"
         style={{
           display: "flex",
           alignItems: "center",
@@ -54,8 +54,8 @@ const MovieDetails = () => {
           alt="Movie backdrop"
         />
       </div>
-      <div className="movie-details">
-        <div className="movie-details-left">
+      <div className="movie-detail">
+        <div className="movie-detail-left">
           <div className="movie-poster-box">
             <img
               className="movie-poster"
@@ -66,9 +66,9 @@ const MovieDetails = () => {
             />
           </div>
         </div>
-        <div className="movie-details-right">
-          <div className="movie-details-top">
-            <div className="movie-title">
+        <div className="movie-detail-right">
+          <div className="movie-detail-right-top">
+            <div className="movie-name">
               {currentMovieDetail ? currentMovieDetail.original_title : ""}
             </div>
             <div className="movie-tagline">
@@ -103,14 +103,14 @@ const MovieDetails = () => {
                 : ""}
             </div>
           </div>
-          <div className="movie-details-bottom">
-            <div className="synopsis-title">Synopsis</div>
+          <div className="movie-detail-right-bottom">
+            <div className="synopsis-text">Synopsis</div>
             <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
           </div>
         </div>
       </div>
       <div className="movie-links">
-        <div className="movie-links-heading">Links</div>
+        <div className="movie-heading">Links</div>
         {currentMovieDetail && currentMovieDetail.homepage && (
           <a
             href={currentMovieDetail.homepage}
@@ -118,7 +118,7 @@ const MovieDetails = () => {
             style={{ textDecoration: "none" }}
           >
             <p>
-              <span className="movie-home-button movie-action-button">
+              <span className="movie-home-button movie-button">
                 MovieWebsite{" "}
                 <i className="new-tab fas fa-external-link-alt"></i>
               </span>
@@ -132,7 +132,7 @@ const MovieDetails = () => {
             style={{ textDecoration: "none" }}
           >
             <p>
-              <span className="movie-imdb-button movie-action-button">
+              <span className="movie-imdb-button movie-button">
                 MovieLink<i className="new-tab fas fa-external-link-alt"></i>
               </span>
             </p>
