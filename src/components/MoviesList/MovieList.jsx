@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MovieList.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
-import { HashLoader } from "react-spinners";
+import { Skeleton } from "@mui/material";
 
 const MovieList = () => {
   const [movieList, setMovieList] = useState([]);
@@ -31,31 +31,25 @@ const MovieList = () => {
       });
   };
 
-  if (isLoading) {
-    return (
-      <div
-        className="loading__container"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          margin: "20px",
-        }}
-      >
-        <HashLoader color="#ff914d" size="30px" />
-      </div>
-    );
-  }
-
   return (
     <div className="movies__list">
       <h2 className="list__header">
         {(type ? type : "POPULAR").toUpperCase()}
       </h2>
       <div className="cards__grid">
-        {movieList.map((movie, index) => (
-          <Card key={index} movie={movie} />
-        ))}
+        {isLoading
+          ? 
+            [...Array(10)].map((_, index) => (
+              <div key={index} className="skeleton__card">
+                <Skeleton variant="rectangular" height={300} />
+                <div style={{ marginTop: "10px" }}>
+                  <Skeleton variant="text" width="80%" height={30} />
+                  <Skeleton variant="text" width="60%" height={20} />
+                </div>
+              </div>
+            ))
+          : 
+            movieList.map((movie, index) => <Card key={index} movie={movie} />)}
       </div>
     </div>
   );

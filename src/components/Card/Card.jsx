@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "./Card.css";
+import { Skeleton } from "@mui/material";
 import { Link } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./Card.css";
+
+// Create a custom theme for Skeleton
+const skeletonTheme = createTheme({
+  components: {
+    MuiSkeleton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#202020", // Skeleton background color
+          color: "#444", // Highlight color
+        },
+      },
+    },
+  },
+});
 
 const Card = ({ movie }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
+    <ThemeProvider theme={skeletonTheme}>
       {isLoading ? (
         <div className="card-container">
-          <SkeletonTheme color="#202020" highlightColor="#444">
-            <Skeleton height={300} duration={2} />
-          </SkeletonTheme>
+          <Skeleton variant="rectangular" width="100%" height={300} />
         </div>
       ) : (
         <Link
-            to={`/movie/${movie.id}}`}
+          to={`/movie/${movie.id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
           <div className="card-container">
@@ -31,6 +46,7 @@ const Card = ({ movie }) => {
               src={`https://image.tmdb.org/t/p/original${
                 movie ? movie.poster_path : ""
               }`}
+              alt={movie ? movie.original_title : ""}
             />
             <div className="card-overlay">
               <div className="card-title">
@@ -50,7 +66,7 @@ const Card = ({ movie }) => {
           </div>
         </Link>
       )}
-    </>
+    </ThemeProvider>
   );
 };
 
