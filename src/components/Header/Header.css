@@ -138,7 +138,16 @@
     padding: 6px 10px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1025px) {
+  .header a {
+    font-size: 0.8rem;
+  }
+  .sign-in-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+@media (min-width:1026px) {
   .header a {
     font-size: 0.7rem;
     text-decoration: none;
