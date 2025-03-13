@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./Card.css";
 
-// Create a custom theme for Skeleton
 const skeletonTheme = createTheme({
   components: {
     MuiSkeleton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#202020", // Skeleton background color
-          color: "#444", // Highlight color
+          backgroundColor: "#202020",
+          color: "#444", 
         },
       },
     },
